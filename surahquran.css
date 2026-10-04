@@ -1,304 +1,171 @@
-
-/* HEADER */
-header{
-  background:var(--accent);
-  color:#fff;
-  text-align:center;
-  padding:18px;
-  position:relative;
-}
-.logo {max-width:180px;height:auto}
-@media (max-width: 600px) {
-  header{padding:10px}
-  header img {
-    max-width: 140px;
-	height:auto;
-  }
-}
-
-.navsurah {
-  padding: 14px;
-  text-align:center;
-  font-size:.8rem;
-  margin-top:10px;
-}
-.navsurah a {
-display:inline-block;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  text-decoration: none;
-  color: #fff;
-  background:var(--accent);
-  border-radius:5px;
-  padding:8px 10px;
-  text-align: center;
-}
-.navsurah a:hover{background:var(--dark-accent);}
-/* CONTAINER */
-.container{
-  max-width:950px;
-  margin:auto;
-  padding:16px;
-}
-.article-container{
-  max-width:850px;
-  margin:auto;
-  padding:0 20px 20px;
-  line-height:1.6;
-}
-.article-container h1{text-align:center;font-size:clamp(1.45em, 4.5vw, 1.95em)}
-.isi{margin:30px 0}
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-}
-
-@media(max-width:900px){
-  .grid{ grid-template-columns:repeat(2,1fr); }
-}
-
-@media(max-width:600px){
-  .grid{ grid-template-columns:1fr; }
-}
-.card2{
-  background:var(--card2);
-  padding:14px;
-  border-radius:12px;
-  position:sticky;
-  top:0;
-  z-index:2;
-  margin-bottom:20px;
-  border:1px solid var(--border-accent);
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-  display:flex;
-  justify-content:space-around;
-  flex-direction:row;
-}
-
-/* CARD SURAT */
-.card{
-  background:var(--card);
-  padding:14px;
-  border-radius:10px;
-  box-shadow:0 2px 5px rgba(0,0,0,.08);
-  cursor:pointer;
-  border:1px solid var(--border-accent);
-  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-}
-.card b{font-size:1.1em}
-.card:hover{
-  background:var(--light-accent);
-  border:1px solid var(--bd-accent);
-}
-@media (hover: hover) and (pointer: fine) {
-  .card {
-    transition: transform .2s ease, box-shadow .2s ease;
-  }
-
-  .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0,0,0,.06);
-  }
-}
-.card {
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-  user-select: none;
-}
-
-.arab{
-  font-family:"Noto Naskh Arabic","Traditional Arabic","Geeza Pro",serif;
-  font-size: clamp(32px, 4.5vw, 38px);
-  text-align:right;
-}
-.meta{
-  font-size:12px;
-  opacity:.7;
-  text-transform: capitalize;
-}
-.card .arti {
-  font-size: 13px;
-  color: var(--text);
-  opacity:.8;
-  margin: 4px 0 6px;
-}
-.arab {
-  text-align: right;
-}
-
-.arab i {
-  font-family: "surahquran";
+@font-face {
+  font-family: &#39;surahquran&#39;;
+  src: url(&#39;/fonts/surahquran.eot&#39;);
+  src: url(&#39;/fonts/surahquran.eot&#39;) format(&#39;embedded-opentype&#39;),
+       url(&#39;/fonts/surahquran.woff2&#39;) format(&#39;woff2&#39;),
+       url(&#39;/fonts/surahquran.woff&#39;) format(&#39;woff&#39;),
+       url(&#39;/fontsfont/surahquran.ttf&#39;) format(&#39;truetype&#39;),
+       url(&#39;/fontsfont/surahquran.svg&#39;) format(&#39;svg&#39;);
+  font-weight: normal;
   font-style: normal;
-  font-size: 2.5rem;
-  line-height: 1;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: &#39;surahquran&#39;;
+    src: url(&#39;/fonts/surahquran.svg&#39;) format(&#39;svg&#39;);
+  }
+}
+*/
+[class^=&quot;icon-&quot;]:before, [class*=&quot; icon-&quot;]:before {
+  font-family: &quot;surahquran&quot;;
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+
   display: inline-block;
+  text-decoration: inherit;
+  /* width: 1em;
+  margin-right: .2em; */
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
-/* BACK TOP BUTTON */
-.top{
-  bottom:25px;
-  right:25px;
-}
-
-
-/* ================= FOOTER BASE ================= */
-.site-footer {
-  background: #0f172a; /* dark navy */
-  margin-top:25px;
-  color: #cbd5f5;
-  font-family: Inter,system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-/* ================= MAIN ================= */
-.footer-container {
-  max-width: 950px;
-  margin: 0 auto;
-  padding: 40px 20px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-}
-
-.footer-left {
-  display: flex;
-  gap: 18px;
-  max-width: 600px;
-}
-
-.footer-logo {
-  width: 82px;
-  height: 82px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-.footer-desc h3 {
-  margin: 0 0 8px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #f8fafc;
-}
-
-.footer-desc p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #94a3b8;
-}
-
-/* ================= RIGHT ================= */
-.footer-right ul {
-  margin: 0;
-  padding-left: 18px;
-  list-style: disc;
-}
-
-.footer-right li {
-  margin-bottom: 8px;
-}
-
-.footer-right a {
-  color: #cbd5f5;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.footer-right a:hover {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-/* ================= BOTTOM ================= */
-.footer-bottom {
-  border-top: 1px solid #1e293b;
-  padding: 16px 0;
-  max-width: 950px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
-  box-sizing: border-box;
-}
-
-.footer-copy {
-  font-size: 13px;
-  color: #94a3b8;
-}
-
-.footer-copy a {
-  color: #cbd5f5;
-  text-decoration: none;
-}
-
-.footer-copy a:hover {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-.footer-nav {
-  display: flex;
-  align-items: center;
-}
-
-.footer-nav a {
-  margin-left: 14px;
-  font-size: 13px;
-  color: #94a3b8;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.footer-nav a:hover {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    gap: 28px;
-  }
-
-  .footer-left {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .footer-right{
-	margin:0 auto;
-  }
-  .footer-right ul {
-    padding-left: 0;
-    text-align: left;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 12px;
-    text-align: center;
-  }
-
-  .footer-nav a {
-    margin: 0 8px;
-  }
-}
-
-.footer-right ul {
-  margin: 0;
-  padding-left: 1.2em;
-}
-
-.footer-right ul li {
-  line-height: 1.2;
-}
-
-@media screen and (max-width: 600px) {
- .quran-banner-wrap {
-    display:none;
-  }
-}
-
+.icon-0:before { content: &#39;\e800&#39;; } /* &#39;î &#8364;&#39; */
+.icon-1:before { content: &#39;\e801&#39;; } /* &#39;î &#129;&#39; */
+.icon-2:before { content: &#39;\e802&#39;; } /* &#39;î &#8218;&#39; */
+.icon-3:before { content: &#39;\e803&#39;; } /* &#39;î ƒ&#39; */
+.icon-4:before { content: &#39;\e804&#39;; } /* &#39;î &#8222;&#39; */
+.icon-5:before { content: &#39;\e805&#39;; } /* &#39;î &#8230;&#39; */
+.icon-6:before { content: &#39;\e806&#39;; } /* &#39;î &#8224;&#39; */
+.icon-7:before { content: &#39;\e807&#39;; } /* &#39;î &#8225;&#39; */
+.icon-8:before { content: &#39;\e808&#39;; } /* &#39;î ˆ&#39; */
+.icon-9:before { content: &#39;\e809&#39;; } /* &#39;î &#8240;&#39; */
+.icon-10:before { content: &#39;\e80a&#39;; } /* &#39;î Š&#39; */
+.icon-11:before { content: &#39;\e80b&#39;; } /* &#39;î &#8249;&#39; */
+.icon-12:before { content: &#39;\e80c&#39;; } /* &#39;î Œ&#39; */
+.icon-13:before { content: &#39;\e80d&#39;; } /* &#39;î &#141;&#39; */
+.icon-14:before { content: &#39;\e80e&#39;; } /* &#39;î Ž&#39; */
+.icon-15:before { content: &#39;\e80f&#39;; } /* &#39;î &#143;&#39; */
+.icon-16:before { content: &#39;\e810&#39;; } /* &#39;î &#144;&#39; */
+.icon-17:before { content: &#39;\e811&#39;; } /* &#39;î &#8216;&#39; */
+.icon-18:before { content: &#39;\e812&#39;; } /* &#39;î &#8217;&#39; */
+.icon-19:before { content: &#39;\e813&#39;; } /* &#39;î &#8220;&#39; */
+.icon-20:before { content: &#39;\e814&#39;; } /* &#39;î &#8221;&#39; */
+.icon-21:before { content: &#39;\e815&#39;; } /* &#39;î &#8226;&#39; */
+.icon-22:before { content: &#39;\e816&#39;; } /* &#39;î &#8211;&#39; */
+.icon-23:before { content: &#39;\e817&#39;; } /* &#39;î &#8212;&#39; */
+.icon-24:before { content: &#39;\e818&#39;; } /* &#39;î &#732;&#39; */
+.icon-25:before { content: &#39;\e819&#39;; } /* &#39;î &#8482;&#39; */
+.icon-26:before { content: &#39;\e81a&#39;; } /* &#39;î š&#39; */
+.icon-27:before { content: &#39;\e81b&#39;; } /* &#39;î &#8250;&#39; */
+.icon-28:before { content: &#39;\e81c&#39;; } /* &#39;î œ&#39; */
+.icon-29:before { content: &#39;\e81d&#39;; } /* &#39;î &#157;&#39; */
+.icon-30:before { content: &#39;\e81e&#39;; } /* &#39;î ž&#39; */
+.icon-31:before { content: &#39;\e81f&#39;; } /* &#39;î Ÿ&#39; */
+.icon-32:before { content: &#39;\e820&#39;; } /* &#39;î  &#39; */
+.icon-33:before { content: &#39;\e821&#39;; } /* &#39;î &#161;&#39; */
+.icon-34:before { content: &#39;\e822&#39;; } /* &#39;î &#162;&#39; */
+.icon-35:before { content: &#39;\e823&#39;; } /* &#39;î &#163;&#39; */
+.icon-36:before { content: &#39;\e824&#39;; } /* &#39;î &#164;&#39; */
+.icon-37:before { content: &#39;\e825&#39;; } /* &#39;î &#165;&#39; */
+.icon-38:before { content: &#39;\e826&#39;; } /* &#39;î &#166;&#39; */
+.icon-39:before { content: &#39;\e827&#39;; } /* &#39;î &#167;&#39; */
+.icon-40:before { content: &#39;\e828&#39;; } /* &#39;î &#168;&#39; */
+.icon-41:before { content: &#39;\e829&#39;; } /* &#39;î &#169;&#39; */
+.icon-42:before { content: &#39;\e82a&#39;; } /* &#39;î ª&#39; */
+.icon-43:before { content: &#39;\e82b&#39;; } /* &#39;î &#171;&#39; */
+.icon-44:before { content: &#39;\e82c&#39;; } /* &#39;î &#172;&#39; */
+.icon-45:before { content: &#39;\e82d&#39;; } /* &#39;î &#173;&#39; */
+.icon-46:before { content: &#39;\e82e&#39;; } /* &#39;î &#174;&#39; */
+.icon-47:before { content: &#39;\e82f&#39;; } /* &#39;î &#175;&#39; */
+.icon-48:before { content: &#39;\e830&#39;; } /* &#39;î &#176;&#39; */
+.icon-49:before { content: &#39;\e831&#39;; } /* &#39;î &#177;&#39; */
+.icon-50:before { content: &#39;\e832&#39;; } /* &#39;î &#178;&#39; */
+.icon-51:before { content: &#39;\e833&#39;; } /* &#39;î &#179;&#39; */
+.icon-52:before { content: &#39;\e834&#39;; } /* &#39;î &#180;&#39; */
+.icon-53:before { content: &#39;\e835&#39;; } /* &#39;î µ&#39; */
+.icon-54:before { content: &#39;\e836&#39;; } /* &#39;î &#182;&#39; */
+.icon-55:before { content: &#39;\e837&#39;; } /* &#39;î &#183;&#39; */
+.icon-56:before { content: &#39;\e838&#39;; } /* &#39;î &#184;&#39; */
+.icon-57:before { content: &#39;\e839&#39;; } /* &#39;î &#185;&#39; */
+.icon-58:before { content: &#39;\e83a&#39;; } /* &#39;î º&#39; */
+.icon-59:before { content: &#39;\e83b&#39;; } /* &#39;î &#187;&#39; */
+.icon-60:before { content: &#39;\e83c&#39;; } /* &#39;î &#188;&#39; */
+.icon-61:before { content: &#39;\e83d&#39;; } /* &#39;î &#189;&#39; */
+.icon-62:before { content: &#39;\e83e&#39;; } /* &#39;î &#190;&#39; */
+.icon-63:before { content: &#39;\e83f&#39;; } /* &#39;î &#191;&#39; */
+.icon-64:before { content: &#39;\e840&#39;; } /* &#39;î&#161;&#8364;&#39; */
+.icon-65:before { content: &#39;\e841&#39;; } /* &#39;î&#161;&#129;&#39; */
+.icon-66:before { content: &#39;\e842&#39;; } /* &#39;î&#161;&#8218;&#39; */
+.icon-67:before { content: &#39;\e843&#39;; } /* &#39;î&#161;ƒ&#39; */
+.icon-68:before { content: &#39;\e844&#39;; } /* &#39;î&#161;&#8222;&#39; */
+.icon-69:before { content: &#39;\e845&#39;; } /* &#39;î&#161;&#8230;&#39; */
+.icon-70:before { content: &#39;\e846&#39;; } /* &#39;î&#161;&#8224;&#39; */
+.icon-71:before { content: &#39;\e847&#39;; } /* &#39;î&#161;&#8225;&#39; */
+.icon-72:before { content: &#39;\e848&#39;; } /* &#39;î&#161;ˆ&#39; */
+.icon-73:before { content: &#39;\e849&#39;; } /* &#39;î&#161;&#8240;&#39; */
+.icon-74:before { content: &#39;\e84a&#39;; } /* &#39;î&#161;Š&#39; */
+.icon-75:before { content: &#39;\e84b&#39;; } /* &#39;î&#161;&#8249;&#39; */
+.icon-76:before { content: &#39;\e84c&#39;; } /* &#39;î&#161;Œ&#39; */
+.icon-77:before { content: &#39;\e84d&#39;; } /* &#39;î&#161;&#141;&#39; */
+.icon-78:before { content: &#39;\e84e&#39;; } /* &#39;î&#161;Ž&#39; */
+.icon-79:before { content: &#39;\e84f&#39;; } /* &#39;î&#161;&#143;&#39; */
+.icon-80:before { content: &#39;\e850&#39;; } /* &#39;î&#161;&#144;&#39; */
+.icon-81:before { content: &#39;\e851&#39;; } /* &#39;î&#161;&#8216;&#39; */
+.icon-82:before { content: &#39;\e852&#39;; } /* &#39;î&#161;&#8217;&#39; */
+.icon-83:before { content: &#39;\e853&#39;; } /* &#39;î&#161;&#8220;&#39; */
+.icon-84:before { content: &#39;\e854&#39;; } /* &#39;î&#161;&#8221;&#39; */
+.icon-85:before { content: &#39;\e855&#39;; } /* &#39;î&#161;&#8226;&#39; */
+.icon-86:before { content: &#39;\e856&#39;; } /* &#39;î&#161;&#8211;&#39; */
+.icon-87:before { content: &#39;\e857&#39;; } /* &#39;î&#161;&#8212;&#39; */
+.icon-88:before { content: &#39;\e858&#39;; } /* &#39;î&#161;&#732;&#39; */
+.icon-89:before { content: &#39;\e859&#39;; } /* &#39;î&#161;&#8482;&#39; */
+.icon-90:before { content: &#39;\e85a&#39;; } /* &#39;î&#161;š&#39; */
+.icon-91:before { content: &#39;\e85b&#39;; } /* &#39;î&#161;&#8250;&#39; */
+.icon-92:before { content: &#39;\e85c&#39;; } /* &#39;î&#161;œ&#39; */
+.icon-93:before { content: &#39;\e85d&#39;; } /* &#39;î&#161;&#157;&#39; */
+.icon-94:before { content: &#39;\e85e&#39;; } /* &#39;î&#161;ž&#39; */
+.icon-95:before { content: &#39;\e85f&#39;; } /* &#39;î&#161;Ÿ&#39; */
+.icon-96:before { content: &#39;\e860&#39;; } /* &#39;î&#161; &#39; */
+.icon-97:before { content: &#39;\e861&#39;; } /* &#39;î&#161;&#161;&#39; */
+.icon-98:before { content: &#39;\e862&#39;; } /* &#39;î&#161;&#162;&#39; */
+.icon-99:before { content: &#39;\e863&#39;; } /* &#39;î&#161;&#163;&#39; */
+.icon-100:before { content: &#39;\e864&#39;; } /* &#39;î&#161;&#164;&#39; */
+.icon-101:before { content: &#39;\e865&#39;; } /* &#39;î&#161;&#165;&#39; */
+.icon-102:before { content: &#39;\e866&#39;; } /* &#39;î&#161;&#166;&#39; */
+.icon-103:before { content: &#39;\e867&#39;; } /* &#39;î&#161;&#167;&#39; */
+.icon-104:before { content: &#39;\e868&#39;; } /* &#39;î&#161;&#168;&#39; */
+.icon-105:before { content: &#39;\e869&#39;; } /* &#39;î&#161;&#169;&#39; */
+.icon-106:before { content: &#39;\e86a&#39;; } /* &#39;î&#161;ª&#39; */
+.icon-107:before { content: &#39;\e86b&#39;; } /* &#39;î&#161;&#171;&#39; */
+.icon-108:before { content: &#39;\e86c&#39;; } /* &#39;î&#161;&#172;&#39; */
+.icon-109:before { content: &#39;\e86d&#39;; } /* &#39;î&#161;&#173;&#39; */
+.icon-110:before { content: &#39;\e86e&#39;; } /* &#39;î&#161;&#174;&#39; */
+.icon-111:before { content: &#39;\e86f&#39;; } /* &#39;î&#161;&#175;&#39; */
+.icon-112:before { content: &#39;\e870&#39;; } /* &#39;î&#161;&#176;&#39; */
+.icon-113:before { content: &#39;\e871&#39;; } /* &#39;î&#161;&#177;&#39; */
+.icon-114:before { content: &#39;\e872&#39;; } /* &#39;î&#161;&#178;&#39; */
+.icon-115:before { content: &#39;\e873&#39;; } /* &#39;î&#161;&#179;&#39; */  
