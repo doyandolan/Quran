@@ -1,8 +1,8 @@
 @font-face {
-  font-family: &#39;surahquran&#39;;
+  font-family: "surahquran";
   src: url(&#39;/fonts/surahquran.eot&#39;);
   src: url(&#39;/fonts/surahquran.eot&#39;) format(&#39;embedded-opentype&#39;),
-       url(&#39;/fonts/surahquran.woff2&#39;) format(&#39;woff2&#39;),
+       url("https://cdn.jsdelivr.net/gh/doyandolan/Quran@main/LPMQ-Misbah.woff2") format("woff2"),
        url(&#39;/fonts/surahquran.woff&#39;) format(&#39;woff&#39;),
        url(&#39;/fontsfont/surahquran.ttf&#39;) format(&#39;truetype&#39;),
        url(&#39;/fontsfont/surahquran.svg&#39;) format(&#39;svg&#39;);
